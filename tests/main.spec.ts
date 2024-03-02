@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
+import clipboardy from 'clipboardy';
 import { test, Page } from '@playwright/test';
 
 dotenv.config();
@@ -36,6 +37,8 @@ test('アクセストークン取得', async ({ browser }) => {
     });
   });
   console.log(accessToken);
+  // 先頭と末尾のダブルクォーテーションを削除してクリップボードにコピー
+  clipboardy.writeSync(accessToken.replace(/^"|"$/g, ''));
 });
 
 const checkSettingEnv = () => {

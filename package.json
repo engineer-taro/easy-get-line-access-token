@@ -24,6 +24,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "clipboardy": "^4.0.0",
     "dotenv": "^16.4.5"
   }
 }
