@@ -25,7 +25,7 @@ test('アクセストークン取得', async ({ page }) => {
     );
   }
 
-  const context = await page.context().storageState();
+  const context = await page.context().storageState({ path: './state.json' });
   let accessToken = '';
   context.origins.forEach((origin) => {
     origin.localStorage?.forEach((item) => {
