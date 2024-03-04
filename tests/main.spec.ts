@@ -73,6 +73,12 @@ const identifyFirstPage = async ({
     return 'MAIL_ADDRESS_LOGIN';
   }
 
+  if ((await page.getByText('認証番号で本人確認').count()) > 0) {
+    throw new Error(
+      '2段階認証が有効なため、手動で認証を行ったのちに再度実行してください'
+    );
+  }
+
   return 'LIFF_APP';
 };
 
