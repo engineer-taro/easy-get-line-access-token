@@ -2,15 +2,17 @@
 
 ### 初期設定
 
-```
-cp .env.example .env
-```
-
-envファイルの値を設定
 
 ```
 npm install
 ```
+
+```
+cp .env.example .env
+```
+
+- .envにアクセストークンを取得したいLIFFアプリのURL、自身のLINEログインのメールアドレス・パスワードを設定する
+
 
 ### アクセストークンの取得
 
