@@ -74,6 +74,7 @@ const identifyFirstPage = async ({
   }
 
   if ((await page.getByText('認証番号で本人確認').count()) > 0) {
+    // NOTE: 2段階認証を一度行えば、しばらくは認証番号の入力が不要になるため手動での認証を促す
     throw new Error(
       '2段階認証が有効なため、手動で認証を行ったのちに再度実行してください'
     );
